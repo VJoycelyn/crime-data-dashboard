@@ -41,7 +41,7 @@
 - Provide a share-friendly proof-of-work presentation with a stable public URL, polished loading and empty states, and an easy reset-to-demo-view action.
 - Evidence: styled initial loading, zero-record views, reset actions, filter-preserving sharing and synthetic CSV export. The public dashboard deployment succeeded.
 
-## 11. GitHub delivery — pending
+## 11. GitHub delivery — complete
 - Send the completed site to the user's GitHub crime data dashboard repository.
 - Display the final link as “Crime data dashboard,” not a setup or preview link.
-- Preserve existing repository work. The authorized GitHub transfer remains pending.
+- Preserve existing repository work. The owner-approved transfer to VJoycelyn/crime-data-dashboard was pushed and verified complete. The original empty crimedata repository was left unchanged.
