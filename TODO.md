@@ -1,8 +1,8 @@
 # Casefile — implementation outcomes
 
-## 1. Shareable dashboard landing view — implemented; publication pending
+## 1. Shareable dashboard landing view — complete
 - Provide a public, shareable dashboard landing view with project title, hackathon context, data freshness, and prominent summary metrics.
-- Deliver a link suitable for a proof-of-work sample. The dashboard is implemented; the final public deployment remains pending.
+- Deliver a link suitable for a proof-of-work sample. The public dashboard deployment succeeded and its health endpoint returns HTTP 200.
 
 ## 2. Interactive crime trend visualizations — complete
 - Provide interactive crime trend visualizations with filters for date range, offense category, severity, status, and jurisdiction.
@@ -35,11 +35,11 @@
 
 ## 9. Responsive presentation — complete
 - Provide a responsive presentation optimized for desktop demos and usable on tablets and mobile devices.
-- Evidence: responsive layouts and iPhone-sized rendered checks for overview, records and methodology. Record tables remain horizontally scrollable.
+- Evidence: responsive layouts and iPhone-sized rendered checks for overview, records and methodology. Record tables remain horizontally scrollable; a 390px responsive DOM check confirmed no document-level horizontal overflow.
 
-## 10. Share-friendly proof-of-work presentation — implemented; public URL pending
+## 10. Share-friendly proof-of-work presentation — complete
 - Provide a share-friendly proof-of-work presentation with a stable public URL, polished loading and empty states, and an easy reset-to-demo-view action.
-- Evidence: styled initial loading, zero-record views, reset actions, filter-preserving sharing and synthetic CSV export. Stable publication remains pending.
+- Evidence: styled initial loading, zero-record views, reset actions, filter-preserving sharing and synthetic CSV export. The public dashboard deployment succeeded.
 
 ## 11. GitHub delivery — pending
 - Send the completed site to the user's GitHub crime data dashboard repository.

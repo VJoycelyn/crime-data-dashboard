@@ -1223,6 +1223,7 @@ h1 {
   padding-bottom: 18px;
 }
 .table-scroll {
+  position: relative;
   overflow-x: auto;
 }
 table {

@@ -2,6 +2,8 @@
 
 A responsive, interactive crime-data analytics proof-of-work project for a **Microsoft Fabric & AI learning hackathon**. Casefile uses a dark “Night Operations” interface and 8,963 deterministic synthetic incident records. No real criminal-history data or personal records are included.
 
+**[Crime data dashboard](https://caseview-padmuwub.manus.space)** — open the published, interactive proof-of-work sample.
+
 ## The working sample
 
 Explore synchronized date, offense, district, severity, status and search filters; drill into monthly trends, offense composition and fictional district activity; sort and paginate records; open casefile drawers with incident facts, timelines, classifications, disposition and synthetic subject identifiers. Export the selected view to CSV and copy a share link that preserves the active filter context. The AI analyst generates a labeled briefing from server-computed aggregate metrics only.
