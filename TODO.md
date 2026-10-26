@@ -57,9 +57,16 @@
 - Display the final link as “Crime data dashboard,” not a setup or preview link.
 - Preserve existing repository work. The owner-approved transfer to VJoycelyn/crime-data-dashboard was pushed and verified complete. The original empty crimedata repository was left unchanged.
 
-## 12. Clickable GitHub Pages website — in progress
+## 12. Clickable GitHub Pages website — complete
 
 - Ensure the GitHub crime data dashboard link opens when clicked.
 - Open as a website style or as recommended style.
 - Provide the website through the public GitHub repository's Pages URL while retaining the responsive crime-data dashboard and transparent synthetic-data context.
+- Evidence: GitHub Actions run 40388035689 built and deployed commit e94bdd4 successfully. The published GitHub Pages URL returns compiled assets and renders the interactive dashboard. Repository homepage and demo links point to the website, and the repository is public.
+
+## 13. AI briefings from GitHub Pages — blocked by server publication
+
 - Keep aggregate AI briefings on the existing secure server rather than exposing model credentials in static pages.
+- Exact-origin CORS and preflight handling are implemented in GitHub main and passed local verification. No browser-side model credentials are used.
+- After the owner's Publish action, the managed runtime reported successful deployment of the older commit 195fa1f, not the latest GitHub code e94bdd4. The production AI preflight remains HTTP 404 without Access-Control-Allow-Origin as of October 26, 2026, 20:20 UTC.
+- The available publication API rejects GitHub-backed publication with github_canonical_active and requires the project Dashboard. AI briefing generation from GitHub Pages is not verified working; the website's statistical snapshots remain explicitly labeled as not AI-generated.
