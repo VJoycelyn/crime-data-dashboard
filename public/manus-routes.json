@@ -1,0 +1,9 @@
+{
+  "routes": [
+    { "path": "/", "title": "Overview" },
+    { "path": "/#records", "title": "Case records" },
+    { "path": "/#geography", "title": "Geographic analysis" },
+    { "path": "/#insights", "title": "AI analyst" },
+    { "path": "/#methodology", "title": "Methodology & Fabric" }
+  ]
+}
