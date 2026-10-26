@@ -14,6 +14,11 @@ import ReactMarkdown from "react-markdown";
 import { type Filters, type Summary } from "../../shared/data";
 import { number, SectionTitle } from "./UI";
 
+const AI_API_BASE_URL = (import.meta.env.VITE_AI_API_BASE_URL ?? "").replace(
+  /\/+$/,
+  "",
+);
+
 export interface InsightResult {
   generatedAt: string;
   model: string;
@@ -46,7 +51,7 @@ export function useAIInsights(filters: Filters) {
     setLoading(true);
     setError("");
     try {
-      const response = await fetch("/api/insights", {
+      const response = await fetch(`${AI_API_BASE_URL}/api/insights`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ filters }),

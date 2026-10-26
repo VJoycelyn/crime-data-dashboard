@@ -2,7 +2,7 @@
 
 A responsive, interactive crime-data analytics proof-of-work project for a **Microsoft Fabric & AI learning hackathon**. Casefile uses a dark “Night Operations” interface and 8,963 deterministic synthetic incident records. No real criminal-history data or personal records are included.
 
-**[Crime data dashboard](https://github.com/VJoycelyn/crime-data-dashboard)** — open the GitHub repository.
+**[Crime data dashboard](https://vjoycelyn.github.io/crime-data-dashboard/)** — open the interactive website.
 
 ## The working sample
 

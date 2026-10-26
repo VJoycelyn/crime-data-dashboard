@@ -287,6 +287,19 @@ async function generateInsight(
 async function createApp() {
   const app = express();
   app.disable("x-powered-by");
+  const githubPagesOrigin = "https://vjoycelyn.github.io";
+  app.use("/api/insights", (request, response, next) => {
+    if (request.get("Origin") !== githubPagesOrigin) return next();
+    response.vary("Origin");
+    response.setHeader("Access-Control-Allow-Origin", githubPagesOrigin);
+    response.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    response.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    if (request.method === "OPTIONS") {
+      response.status(204).end();
+      return;
+    }
+    next();
+  });
   app.use(express.json({ limit: "12kb", strict: true }));
 
   app.get("/api/health", (_request, response) => {
@@ -315,12 +328,10 @@ async function createApp() {
       const filters = validateFilters(raw.filters);
       const context = contextFor(filters);
       if (context.totals.total === 0) {
-        response
-          .status(400)
-          .json({
-            error:
-              "No records match these filters; broaden the date or filter selection.",
-          });
+        response.status(400).json({
+          error:
+            "No records match these filters; broaden the date or filter selection.",
+        });
         return;
       }
       const key = cacheKey(filters);
@@ -331,12 +342,10 @@ async function createApp() {
       }
       if (activeAi >= MAX_ACTIVE_AI) {
         response.setHeader("Retry-After", "10");
-        response
-          .status(429)
-          .json({
-            error: "Insight generation is busy; retry shortly",
-            retryAfter: 10,
-          });
+        response.status(429).json({
+          error: "Insight generation is busy; retry shortly",
+          retryAfter: 10,
+        });
         return;
       }
       activeAi += 1;
@@ -345,12 +354,10 @@ async function createApp() {
         setCached(key, insight);
         response.status(200).json(insight);
       } catch {
-        response
-          .status(503)
-          .json({
-            error:
-              "AI insights are temporarily unavailable. Please retry shortly.",
-          });
+        response.status(503).json({
+          error:
+            "AI insights are temporarily unavailable. Please retry shortly.",
+        });
       } finally {
         activeAi -= 1;
       }
